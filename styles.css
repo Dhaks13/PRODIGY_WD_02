@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+:root {
+    color-scheme: only light;
+}
+
+
+html{
+    overflow: hidden;
+    scrollbar-width: none;
+}
+
+body{
+    background: #fff;
+}
+
+.night{
+    background: #1a1a1a45;
+}
+
+.night .nav{
+    background:radial-gradient(#000000,#1a1a1a);
+    backdrop-filter: blur(50%);
+}
+
+.nav{
+    inset: 0;
+    width: 100%;
+    height: 25%;
+    display:flex;
+    position: fixed;
+    background: repeating-linear-gradient(#C7AE6A,#b99a45);    
+}
+
+.nav .logo{
+    width: 15rem;
+    height: 10rem;
+    padding: .5rem;
+    margin: auto .5rem;
+    gap: .5rem;
+    border: .1px #000000 solid;
+    border-radius: 5px;
+}
+
+.night .nav .logo{
+    border: .1px #C7AE6A solid;
+}
+
+.nav h1{
+    font: 3em fantasy;
+    padding: .5rem;
+    margin: auto 1rem;
+    filter: drop-shadow(1px 1px 2px white) invert(5%);
+}
+
+.night .nav h1{
+    color: #C7AE6A;
+    filter: drop-shadow(1px 1px 2px grey ) invert(5%);
+}
+
+.nav .theme{
+    right: 0;
+    top: 0;
+    position: fixed;
+    margin: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: #ffffff65;
+    backdrop-filter: blur(50%);
+}
+
+
+footer{
+    background-color: rgba(0, 0, 0, 0.658);
+    color: white;
+    font: .8rem sans-serif;
+    position: fixed;
+    overflow: hidden;
+    align-items: right;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    width: 25%;
+}
+
+footer a, footer i{
+    cursor: pointer;
+    color: white;
+    margin: 0 0.25rem 0 0;
+}
+
+footer a:hover, footer i:hover{
+    color: blue;
+}
+
+
+
+@media (max-width: 600px) {
+    
+    
+    footer{
+        width: 70%;
+    }
+}
