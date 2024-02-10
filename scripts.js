@@ -2,6 +2,11 @@ let hour = 0;
 let min = 0;
 let second = 0;
 let count = 0;
+let lap=0;
+let lap_hr = 0;
+let lap_min = 0;
+let lap_sec = 0;
+let lap_ms = 0;
 let timer;
 
 function starts(){
@@ -23,6 +28,7 @@ function stops() {
     min = 0; 
     second = 0;
     count = 0;
+    lap = 0;
     document.getElementById('h10').innerHTML = '0';
     document.getElementById('h1').innerHTML = '0';
     document.getElementById('m10').innerHTML = '0';
@@ -31,6 +37,7 @@ function stops() {
     document.getElementById('s1').innerHTML = '0';
     document.getElementById('ms100').innerHTML = '0';
     document.getElementById('ms10').innerHTML = '0';
+    document.removeChild()
 }
 
 function stopWatch() {
@@ -68,11 +75,25 @@ function stopWatch() {
         setTimeout(stopWatch, 9.25);
     }
 }
-
+/*
 function laps(){
+    cur_time = hour + ":" + min + ":" + second +  ":" + count;
+    lap_time = (hour-lap_hr) + ":" + (min-lap_min) + ":" + (second-lap_sec) + ":" + (second-lap_sec);
+    lap_hr = hour;
+    lap_min = min;
+    lap_sec = second;
+    lap_ms = count;
+    lap++;
+    const table_row = document.createElement('tr');
+    const table_elemet1 = document.createElement('td'); 
+    const table_elemet2 = document.createElement('td');
+    const table_elemet3 = document.createElement('td');
+    table_elemet1.innerHTML = `${lap}`;
+    table_elemet2.innerHTML = `${lap_time}`;
+    table_elemet3.innerHTML = `${cur_time}`;
 
 }
-
+*/
 function ToggleTheme() {
     var body = document.querySelector('body');
     var theme = document.getElementById("theme");
