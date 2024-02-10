@@ -222,6 +222,18 @@ main{
     content: " Lap";
 }
 
+table{
+    font-size: large;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.night table{
+    color: #C7AE6A;
+    transition:0.1s ease-in;
+
+}
+
 
 footer{
     background-color: rgba(0, 0, 0, 0.658);
@@ -278,6 +290,10 @@ footer a:hover, footer i:hover{
     
     .overlay{
         margin: 12.5rem 5% 0;
+    }
+
+    table{
+        width: 100%;
     }
 
     footer{
