@@ -2,6 +2,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     user-select: none;
+    transition:0.4s ease-in-out;
 }
 
 :root {
@@ -12,10 +13,28 @@
 html{
     overflow: hidden;
     scrollbar-width: none;
+    transition:0.4s ease-in-out;
 }
 
 body{
     background: #fff;
+    transition:0.4s ease-in-out;
+    cursor: url(img/cursor.png),pointer;
+}
+
+.night{
+    cursor: url(img/cursor-dark.png), pointer;
+    transition:0.4s ease-in-out;
+}
+
+button:hover{
+    cursor: url(img/cursor-click.png), pointer;
+    transition:0.4s ease-in-out;
+}
+
+.night button:hover{
+    cursor: url(img/cursor-click-dark.png), pointer;
+    transition:0.4s ease-in-out;
 }
 
 .night{
@@ -25,15 +44,18 @@ body{
 .night .nav{
     background:radial-gradient(#000000,#1a1a1a);
     backdrop-filter: blur(50%);
+    transition:0.4s ease-in-out;
 }
 
 .nav{
     inset: 0;
     width: 100%;
-    height: 25%;
+    height: 12rem;
     display:flex;
     position: fixed;
-    background: repeating-linear-gradient(#C7AE6A,#b99a45);    
+    background: repeating-linear-gradient(#C7AE6A,#b99a45);  
+    z-index: 1;  
+    transition:0.4s ease-in-out;
 }
 
 .nav .logo{
@@ -44,10 +66,12 @@ body{
     gap: .5rem;
     border: .1px #000000 solid;
     border-radius: 5px;
+    transition:0.4s ease-in-out;
 }
 
 .night .nav .logo{
     border: .1px #C7AE6A solid;
+    transition:0.4s ease-in-out;
 }
 
 .nav h1{
@@ -55,11 +79,13 @@ body{
     padding: .5rem;
     margin: auto 1rem;
     filter: drop-shadow(1px 1px 2px white) invert(5%);
+    transition:0.4s ease-in-out;
 }
 
 .night .nav h1{
     color: #C7AE6A;
     filter: drop-shadow(1px 1px 2px grey ) invert(5%);
+    transition:0.4s ease-in-out;
 }
 
 .nav .theme{
@@ -70,7 +96,130 @@ body{
     width: 2rem;
     height: 2rem;
     background-color: #ffffff65;
+    color: #1a1a1a;
     backdrop-filter: blur(50%);
+    transition:0.4s ease-in-out;
+}
+
+.night .nav .theme{
+    color: #C7AE6A;
+    transition:0.4s ease-in-out;
+}
+
+main{
+    inset: 0;
+    display: inline-flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/bg-light.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition:0.4s ease-in-out;
+}
+
+.night main{
+    transition:0.4s ease-in-out;
+    background-image: url(img/bg-dark.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overlay{
+    margin: 12.5rem 5% 0;
+    background: #b99a4575;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    width: 90%;
+    height: 70%;
+    border-radius:10px ;
+    transition:0.4s ease-in;
+    display: block;
+    position: fixed;
+}
+
+.night .overlay{
+    background: #1a1a1a45;
+    backdrop-filter: blur(10px);
+    transition:0.2s ease-in;
+}
+
+.timer{
+    color: #000000;
+    display: flex;
+    position: relative;
+    margin: 1rem auto;
+    padding: .5rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    transition:0.2s ease-in;
+    border: 1.5px #1a1a1a solid;
+    border-radius: 15px;
+    width: fit-content;
+}
+
+
+.box{
+    border: 1.5px #1a1a1a solid;
+    border-radius: 15px;
+    padding: .2rem;
+    backdrop-filter: blur(10px);
+}
+
+.night .box{
+    border: 1.5px #C7AE6A solid;
+    border-radius: 15px;
+}
+
+
+.night .timer{
+    color: #C7AE6A;
+    transition:0.1s ease-in;
+    border-color: #C7AE6A;
+}
+
+.overlay .buttons{
+    display: flex;
+    position: relative;
+    margin: 0rem auto;
+    justify-content: center;
+    align-items: center;
+    transition:0.1s ease-in;
+    border-radius: 15px;
+    gap: .5rem;
+}
+
+.buttons .start, .buttons .stop, .buttons .reset, .buttons .lap{
+    color: #1a1a1a;
+    background-color: #ffffff50;
+    font-size: 1.2rem;
+    height: 2rem;
+    border-radius: 5px;
+}
+
+ .night .buttons .start,.night  .buttons .stop,.night  .buttons .reset,.night  .buttons .lap{
+    color: #C7AE6A;
+    transition:0.1s ease-in;
+
+}
+
+
+.buttons .start::after{
+    content: " Start";
+}
+
+.buttons .stop::after{
+    content: " Stop";
+}
+
+.buttons .reset::after{
+    content: " Reset";
+}
+
+.buttons .lap::after{
+    content: " Lap";
 }
 
 
@@ -85,23 +234,52 @@ footer{
     right: 0;
     margin: 0;
     width: 25%;
+    transition:0.4s ease-in-out;
 }
 
 footer a, footer i{
     cursor: pointer;
     color: white;
     margin: 0 0.25rem 0 0;
+    transition:0.4s ease-in-out;
 }
 
 footer a:hover, footer i:hover{
     color: blue;
+    transition:0.4s ease-in-out;
 }
 
 
 
 @media (max-width: 600px) {
+
+    .nav{
+        height: 10rem;
+    }
+
+.nav .logo{
+    width: 10rem;
+    height: 8rem;
+    padding: .5rem;
+    margin: auto .5rem;
+    }
+
+    .nav h1{
+        font: 1.75em fantasy;
+        padding: .5rem;
+        margin: auto 1rem;
+        filter: drop-shadow(1px 1px 2px white) invert(5%);
+        transition:0.4s ease-in-out;
+    }
     
+    .buttons .start::after, .buttons .stop::after, .buttons .reset::after, .buttons .lap::after{
+        content: "";
+    }
     
+    .overlay{
+        margin: 12.5rem 5% 0;
+    }
+
     footer{
         width: 70%;
     }
