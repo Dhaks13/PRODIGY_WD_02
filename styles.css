@@ -286,22 +286,27 @@ footer a:hover, footer i:hover{
 
 
 @media (max-width: 600px) {
-
+    body{
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
     .nav{
-        height: 10rem;
+        height: 7rem;
+        margin: 0;
+        position: absolute;
     }
 
 .nav .logo{
-    width: 10rem;
-    height: 8rem;
+    width: 8rem;
+    height: 6rem;
     padding: .5rem;
     margin: auto .5rem;
     }
 
     .nav h1{
-        font: 1.75em fantasy;
-        padding: .5rem;
-        margin: auto 1rem;
+        font: 1.5em fantasy;
+        padding: .1rem ;
+        margin: auto .5rem;
         filter: drop-shadow(1px 1px 2px white) invert(5%);
         transition:0.4s ease-in-out;
     }
@@ -311,7 +316,8 @@ footer a:hover, footer i:hover{
     }
    
     .overlay{
-        margin: 12.5rem 5% 0;
+        position: relative;
+        margin: 8.5rem 5% 0;
     }
 
     
