@@ -135,7 +135,11 @@ main{
     border-radius:10px ;
     transition:0.1s ease-in;
     display: block;
-    position: fixed;
+    overflow-y: scroll; 
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    overflow-x: hidden; 
+    position: relative;
 }
 
 .night .overlay{
@@ -153,11 +157,11 @@ main{
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    font-weight: bold;
+    font-weight: bolder;
     transition:0.1s ease-in;
     border: 1.5px #1a1a1a solid;
     border-radius: 15px;
-    width: fit-content;
+    width: 80%;
 }
 
 
@@ -222,21 +226,34 @@ main{
     content: " Lap";
 }
 
-table{
-    font-size: larger;
-    font-weight: bolder;
+.laps {
+    display: block;
     color: #1a1a1a;
-    border-bottom: 1px #1a1a1a solid;
-    justify-content: space-evenly;
-    width: 90%;
-    margin: 2rem auto;
-    overflow-y: scroll;
-    scrollbar-width: 10px;
+    margin: .7rem 10%;
+    width: 80%;
+    text-align: center;
+    visibility: hidden;
 }
 
-.night table{
-    color: #C7AE6A;
+.laps .head{
+    font-size: 1.2rem;
+    font-weight: bolder;
+    border-bottom: 1px #1a1a1a solid;
+   
+}
+
+.night .laps{
+      color: #C7AE6A;
+}
+
+.night .laps .head{
     border-bottom: 1px #C7AE6A solid;
+}
+.overlay .lap-list {
+    text-align: center;
+    display: block; 
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 
@@ -288,18 +305,24 @@ footer a:hover, footer i:hover{
         filter: drop-shadow(1px 1px 2px white) invert(5%);
         transition:0.4s ease-in-out;
     }
-    
+   
     .buttons .start::after, .buttons .stop::after, .buttons .reset::after, .buttons .lap::after{
         content: "";
     }
-    
+   
     .overlay{
         margin: 12.5rem 5% 0;
     }
 
-    table{
-        width: 95%;
-        margin: 1rem .45rem;
+    
+.laps .head{
+    font-size: .9rem;
+    font-weight: bolder;   
+}
+    
+    .overlay .lap-list {
+        font-size: .75rem;
+        font-weight: bold;
     }
 
     footer{

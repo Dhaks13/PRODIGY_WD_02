@@ -37,17 +37,11 @@
                     <button id="resets" class="reset" onclick="resets()"><i class="fa-solid fa-clock-rotate-left"></i></button>
                     <button id="laps" class="lap" onclick="laps()" disabled><i class="fa-solid fa-location-dot"></i></button>
                 </div>
-                <div class="laps">
-                    <table class="lap">
-                        <th>
-                            <td>Lap</td>
-                            <td>lap Time</td>
-                            <td>Total</td>
-                        </th>
-                        <div class="table-data">
-                            
-                        </div>
-                    </table>
+                <div id="laps-data" class="laps">
+                  <pre class="head">Lap      Lap Time        Total Time</pre>
+                    <pre id="lap-list" class="lap-list">
+                    </pre>
+                </div>
                 </div>
             </div>
         </main>

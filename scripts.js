@@ -11,7 +11,7 @@ let timer;
 
 function starts(){
     timer = true;
-    document.getElementById("resets").disabled = true;
+    document.getElementById("laps-data").style.visibility = "visible";  document.getElementById("resets").disabled = true;
     document.getElementById("laps").disabled = false;
     stopWatch();
 }
@@ -25,10 +25,12 @@ function stops() {
  function resets(){
     timer = false;
     hour = 0;
-    min = 0; 
+    min = 0;
     second = 0;
     count = 0;
     lap = 0;
+    document.getElementById("laps-data").style.visibility = "hidden";
+    document.getElementById('lap-list').innerHTML = '';
     document.getElementById('h10').innerHTML = '0';
     document.getElementById('h1').innerHTML = '0';
     document.getElementById('m10').innerHTML = '0';
@@ -37,8 +39,7 @@ function stops() {
     document.getElementById('s1').innerHTML = '0';
     document.getElementById('ms100').innerHTML = '0';
     document.getElementById('ms10').innerHTML = '0';
-    document.removeChild()
-}
+ }
 
 function stopWatch() {
     if (timer) {
@@ -75,25 +76,37 @@ function stopWatch() {
         setTimeout(stopWatch, 9.25);
     }
 }
-/*
-function laps(){
-    cur_time = hour + ":" + min + ":" + second +  ":" + count;
-    lap_time = (hour-lap_hr) + ":" + (min-lap_min) + ":" + (second-lap_sec) + ":" + (second-lap_sec);
-    lap_hr = hour;
-    lap_min = min;
-    lap_sec = second;
-    lap_ms = count;
-    lap++;
-    const table_row = document.createElement('tr');
-    const table_elemet1 = document.createElement('td'); 
-    const table_elemet2 = document.createElement('td');
-    const table_elemet3 = document.createElement('td');
-    table_elemet1.innerHTML = `${lap}`;
-    table_elemet2.innerHTML = `${lap_time}`;
-    table_elemet3.innerHTML = `${cur_time}`;
 
+function laps(){
+  var t_count=count;
+  var t_second=second;
+  var t_min=min;
+  var t_hour=hour;
+  cur_time = t_hour + ":" + t_min + ":" + t_second +  ":" + t_count;
+  lap_hr=t_hour-lap_hr;
+  lap_min=t_min-lap_min;
+ 
+  if (lap_min < 0) {
+        lap_min = lap_min + 60;
+      }
+  lap_sec=t_second-lap_sec;
+    if (lap_sec < 0) {
+        lap_sec = lap_sec + 60;
+      }
+  lap_ms=t_count-lap_ms;
+  if (lap_ms < 0) {
+        lap_ms = lap_ms + 100;
+      }
+ 
+    lap_time = lap_hr + ":" + lap_min + ":" + lap_sec + ":" + lap_ms;
+    lap_hr = t_hour;
+    lap_min = t_min;
+    lap_sec = t_second;
+    lap_ms = t_count;
+    lap++;
+    document.getElementById('lap-list').innerHTML = lap + '       ' + lap_time + '        ' + cur_time + '\n' +document.getElementById('lap-list').innerHTML;
 }
-*/
+
 function ToggleTheme() {
     var body = document.querySelector('body');
     var theme = document.getElementById("theme");
@@ -107,6 +120,6 @@ function ToggleTheme() {
         body.classList.add('night');
         theme.classList.remove('fa-moon');
         theme.classList.add('fa-sun');
-        logo.src = 'img/logo-night.png'; 
+        logo.src = 'img/logo-night.png';
         }
 }
