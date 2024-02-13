@@ -78,33 +78,38 @@ function stopWatch() {
 }
 
 function laps(){
-  var t_count=count;
-  var t_second=second;
-  var t_min=min;
-  var t_hour=hour;
-  cur_time = t_hour + ":" + t_min + ":" + t_second +  ":" + t_count;
-  lap_hr=t_hour-lap_hr;
-  lap_min=t_min-lap_min;
- 
-  if (lap_min < 0) {
-        lap_min = lap_min + 60;
-      }
-  lap_sec=t_second-lap_sec;
-    if (lap_sec < 0) {
-        lap_sec = lap_sec + 60;
-      }
-  lap_ms=t_count-lap_ms;
-  if (lap_ms < 0) {
-        lap_ms = lap_ms + 100;
-      }
- 
-    lap_time = lap_hr + ":" + lap_min + ":" + lap_sec + ":" + lap_ms;
-    lap_hr = t_hour;
-    lap_min = t_min;
-    lap_sec = t_second;
-    lap_ms = t_count;
-    lap++;
-    document.getElementById('lap-list').innerHTML = lap + '       ' + lap_time + '        ' + cur_time + '\n' +document.getElementById('lap-list').innerHTML;
+let cur_count = count;
+let cur_second = second;
+let cur_min = min;
+let cur_hour = hour;
+let cur_time=cur_hour + ":" + cur_min + ":" + cur_second + ":" + cur_count;
+let lap_hr_diff = cur_hour - lap_hr;
+let lap_min_diff = cur_min - lap_min;
+let lap_sec_diff = cur_second - lap_sec;
+let lap_ms_diff = cur_count - lap_ms;
+
+if (lap_ms_diff < 0) {
+    lap_ms_diff += 100;
+    lap_sec_diff--; 
+}
+if (lap_sec_diff < 0) {
+    lap_sec_diff += 60;
+    lap_min_diff--; 
+}
+if (lap_min_diff < 0) {
+    lap_min_diff += 60;
+    lap_hr_diff--; 
+}
+let lap_time = lap_hr_diff + ":" + lap_min_diff + ":" + lap_sec_diff + ":" + lap_ms_diff;
+lap_hr = cur_hour;
+lap_min = cur_min;
+lap_sec = cur_second;
+lap_ms = cur_count;
+if(lap==0){
+    lap_time=cur_time;
+}
+lap++;  
+document.getElementById('lap-list').innerHTML = lap + '       ' + lap_time + '        ' + cur_time + '\n' +document.getElementById('lap-list').innerHTML;
 }
 
 function ToggleTheme() {
