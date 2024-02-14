@@ -1,5 +1,5 @@
 # PRODIGY_WD_02
-##Project Title: Stopwatch web Application 
+## Project Title: Stopwatch web Application 
 
 
 ### Aim:
